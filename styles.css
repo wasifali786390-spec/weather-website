@@ -1,0 +1,38 @@
+:root{--bg:#f4f7fb;--card:#ffffff;--accent:#0066cc;--muted:#6b7280}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;background:linear-gradient(180deg,var(--bg),#eef3fb);color:#111}
+.app{max-width:760px;margin:40px auto;padding:24px}
+.header h1{margin:0;font-size:28px}
+.subtitle{margin:6px 0 18px;color:var(--muted)}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+#search-form{flex:1;display:flex;gap:8px}
+#city-input{flex:1;padding:10px 12px;border-radius:8px;border:1px solid #d1d5db}
+#search-form button, .geo{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+.geo{background:#1f8f4a}
+.status{min-height:20px;color:var(--muted);margin-bottom:12px}
+.status.loading{opacity:0.85}
+.status.loading::after{content:"";display:inline-block;margin-left:8px;width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 1s ease-in-out infinite}
+.weather{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.weather.visible{animation:fadeInUp .32s cubic-bezier(.22,.9,.32,1) both}
+.hidden{display:none}
+.main-info{display:flex;justify-content:space-between;align-items:center}
+.city-line{display:flex;gap:8px;align-items:baseline}
+.city-line h2{margin:0;font-size:20px}
+.temp-wrap{display:flex;align-items:center;gap:12px}
+.icon{width:64px;height:64px}
+.icon.floating{animation:float 3s ease-in-out infinite}
+.temp{font-size:32px;font-weight:600;transition:transform .28s ease}
+.desc{color:var(--muted);text-transform:capitalize}
+.details{display:flex;gap:18px;list-style:none;padding:0;margin:12px 0 0;color:var(--muted)}
+.details li{font-size:14px}
+.footer{margin-top:18px;color:var(--muted);font-size:13px}
+@media (max-width:520px){.app{margin:18px;padding:16px}.temp{font-size:26px}.icon{width:48px;height:48px}.details{flex-direction:column;gap:6px}}
+
+@keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(.9);opacity:.6}100%{transform:scale(1);opacity:1}}
+
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+@keyframes fadeInUp{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
+
+.temp.bump{transform:scale(1.06)}

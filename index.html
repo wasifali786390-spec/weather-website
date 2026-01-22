@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather · Global News Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Weather</h1>
+      <p class="subtitle">Search current weather by city or use your location</p>
+    </header>
+
+    <section class="controls">
+      <form id="search-form">
+        <input id="city-input" type="search" placeholder="Enter city (e.g. London)" aria-label="City name" required>
+        <button type="submit">Search</button>
+      </form>
+      <button id="geo-btn" class="geo">Use my location</button>
+    </section>
+
+    <section id="status" class="status" aria-live="polite"></section>
+
+    <section id="weather" class="weather hidden">
+      <div class="main-info">
+        <div class="city-line">
+          <h2 id="city">—</h2>
+          <span id="country" class="country"></span>
+        </div>
+        <div class="temp-wrap">
+          <img id="icon" alt="weather icon" src="" class="icon hidden">
+          <div>
+            <div id="temp" class="temp">—°C</div>
+            <div id="desc" class="desc">—</div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="details">
+        <li>Feels like: <strong id="feels">—°C</strong></li>
+        <li>Humidity: <strong id="humidity">—%</strong></li>
+        <li>Wind: <strong id="wind">— m/s</strong></li>
+      </ul>
+    </section>
+
+    <footer class="footer">Replace the API key in <code>script.js</code> with your OpenWeatherMap API key.</footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
